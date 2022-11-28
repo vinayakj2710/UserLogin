@@ -25,10 +25,6 @@ const passReducer = (state, action) => {
 }
 
 const Login = (props) => {
-  // const [enteredEmail, setEnteredEmail] = useState('');
-  // const [emailIsValid, setEmailIsValid] = useState();
-  // const [enteredPassword, setEnteredPassword] = useState('');
-  // const [passwordIsValid, setPasswordIsValid] = useState();
   const [formIsValid, setFormIsValid] = useState(false);
 
   const [emailState, dispatchEmail] = useReducer(emailReducer, { value:'', isValid: null})
@@ -50,12 +46,6 @@ const Login = (props) => {
       clearTimeout(Identifier);
     }
   },[emailIsValid, passwordIsValid])
-
-  // useEffect( () => {
-  //   setFormIsValid(
-  //     enteredEmail.includes('@') && enteredPassword.trim().length > 6
-  //   );
-  // },[enteredEmail, enteredPassword]);
 
   const emailChangeHandler = (event) => {
     dispatchEmail({type: 'USER_ID', value: event.target.value});
